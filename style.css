@@ -158,9 +158,19 @@ body {
   flex-wrap: wrap;
   gap: 30px;
 }
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #888;
+}
+
 .legal-note {
   font-size: 0.8rem;
   margin-top: 10px;
+  font-style: italic;
 }
 
 /* Mobilní menu - Logika */
