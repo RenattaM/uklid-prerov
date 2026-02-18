@@ -1,15 +1,19 @@
-// Změna barvy navigace při scrollování
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.style.padding = "10px 0";
-    navbar.style.background = "#ffffff";
-  } else {
-    navbar.style.padding = "20px 0";
-  }
+// Mobilní menu toggle
+const menu = document.querySelector("#mobile-menu");
+const menuLinks = document.querySelector(".nav-links");
+
+menu.addEventListener("click", () => {
+  menuLinks.classList.toggle("active");
 });
 
-// Plynulé scrollování pro odkazy v menu
+// Zavření menu po kliknutí na odkaz
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menuLinks.classList.remove("active");
+  });
+});
+
+// Plynulé scrollování
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();

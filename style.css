@@ -28,7 +28,7 @@ body {
 /* Navbar */
 .navbar {
   background: var(--white);
-  padding: 20px 0;
+  padding: 15px 0;
   position: fixed;
   width: 100%;
   top: 0;
@@ -47,7 +47,6 @@ body {
   font-weight: 700;
   color: var(--dark);
 }
-
 .logo span {
   color: var(--primary);
 }
@@ -56,121 +55,92 @@ body {
   display: flex;
   list-style: none;
 }
-
 .nav-links li a {
   text-decoration: none;
   color: var(--dark);
   margin-left: 30px;
   font-weight: 600;
-  transition: color 0.3s;
 }
 
-.nav-links li a:hover {
-  color: var(--primary);
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
-/* Hero Section */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Hero */
 .hero {
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1350&q=80");
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   color: var(--white);
   text-align: center;
-  padding-top: 80px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 60px;
 }
 
 .btn {
   display: inline-block;
   background: var(--primary);
   color: var(--white);
-  padding: 15px 30px;
+  padding: 12px 25px;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: 600;
-  transition: transform 0.3s;
+  margin-top: 20px;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* Sections */
+/* Sekce */
 .section {
-  padding: 80px 0;
+  padding: 60px 0;
 }
-
 .section-title {
   text-align: center;
-  font-size: 2.2rem;
   margin-bottom: 40px;
-  position: relative;
 }
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--primary);
-  margin: 10px auto;
-}
-
 .bg-light {
   background: var(--light);
 }
 
-/* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .service-card {
   background: var(--white);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.service-card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Table */
+/* Tabulka */
 .price-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
   background: var(--white);
 }
-
 .price-table th,
 .price-table td {
-  padding: 15px;
+  padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
 }
-
 .price-table th {
   background: var(--primary);
   color: var(--white);
@@ -180,40 +150,43 @@ body {
 .footer {
   background: #222;
   color: #ccc;
-  padding: 60px 0 20px;
+  padding: 40px 0;
 }
-
 .footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
-
-.footer h3 {
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
 .legal-note {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-top: 10px;
-  font-style: italic;
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #444;
-}
-
-/* Responsive */
+/* Mobilní menu - Logika */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
   .nav-links {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
-  .hero h1 {
-    font-size: 2rem;
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .nav-links li a {
+    margin-left: 0;
   }
 }
